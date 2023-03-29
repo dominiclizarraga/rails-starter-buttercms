@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title><%= @tinyhouse.seo_title %></title>
+  </head>
+  <body>
+    <h1><%= @tinyhouse.headline %></h1>
+    <h3> <%= @tinyhouse.what_is %></h3>
+
+    <!-- Loop over customer logos -->
+    <% @tinyhouse.images.each do |tiny| %>
+        <%= image_tag(tiny.tinyhouse_1, {:style => "width:300px;"}) %>
+        <%= image_tag(tiny.tinyhouse_2, {:style => "width:300px;"}) %>
+    <% end %>
+    <button class=""><%= @tinyhouse.call_to_action %></button>
+  </body>
+</html>

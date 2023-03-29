@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'pages#index'
-  get 'homepage', to: "home#show"
+  # new routes
+  get 'homepage', to: 'home#show'
+  get 'tinyhouse', to: 'home#tinyhouse'
+
 
   resources :blog, only: %w[index show] do
     collection do

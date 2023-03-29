@@ -1,13 +1,15 @@
 <html>
   <head>
-    <title><%= @homepage.seo_title %></title>
+    <title><%= @homepage.seo_tile %></title>
   </head>
   <body>
     <h1><%= @homepage.headline %></h1>
-    <img width="100%" src="<%= @homepage.hero_image %>">
+    <img width="300px" src="<%= @homepage.hero_image %>">
     <button><%= @homepage.call_to_action %></button>
     <h3>Customers Love Us!</h3>
     <!-- Loop over customer logos -->
-    <%= @homepage.customer_logos %>
+    <%  @homepage.customer_logos.each do |key, value| %>
+      <%= image_tag("#{key.logo_image}", {:style => "width:300px;"}) %>
+    <% end %>
   </body>
 </html>
